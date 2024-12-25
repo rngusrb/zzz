@@ -1,4 +1,3 @@
-## ACCELERATING MATRIX MULTIPLICATION
 ### ACCELERATING MATRIX MULTIPLICATION
 
 #### avx
@@ -102,20 +101,7 @@ int loop=2;
 ![image](https://github.com/user-attachments/assets/bb1f2017-ef16-4cdb-b92c-959a408cffc2)
 
 
-## 모델 테스트
-1. 테스트하고자 하는 모델폴더 및 파일(submitFirst/model.pt)를 /repo/saved_models에 저장한다.
-2. 모델폴더를 인자(--save-file)로 파이썬 파일 실행.
-
-`python demo.py --save-file submitFirst`
+### Branch predictor 
+![image](https://github.com/user-attachments/assets/cd173ffc-a28d-4b5c-adcc-5fb84415e3cb)
 
 
-## 학습결과
- 2000 epoch동안 학습시 success rate
-![학습데이터](./figures/RL_successrate.png)
-### small border
-![small](./figures/smalloutput.gif)
-
-
-
-### big border
-![big](./figures/8m52soutput.gif)
