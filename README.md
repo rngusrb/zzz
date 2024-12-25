@@ -3,14 +3,14 @@
 
 #### avx
 -작은 사이즈의 연산들을 각각처리 하는 것이 아니라 한번에 커다란 연산들로 처리하는것
+
 1 .코드가 사용하는 avx256 버전에서 double형이 256bit들어갈 수 있는 최대word 수(256/(doble(8-byte)*1byte(8bit))=4)를 multiplication크기로 설정
 
 2. 행렬 B[j,k) value를 multiplication크기만큼 벡터 복제 저장한 후<-해당 코드에서 broadcast가 수행
-3. 
+
 4. 행렬 &A[k,i]주소+multiplication크기(4)만큼 데이터를 가져와<-해당 코드에서 load가 수행
-5. 
+
 6. 둘을 곱한 후 &C[j,i]주소+multiplication크기(4)에 넣는 것 ,_해당 코드에서 fmadd,store가 수행
-7. 
 ```
 for (int i=si;i<si+block;i+=loop*16)
 avx512에서 integer크기를 고려 (512/(integer(4byte)*8it)=16 주소+16만큼 데이터를 가져와 멀티계산 이때 i는 16만큼 이동해야 데이터 중복이 사라짐.
