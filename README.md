@@ -6,8 +6,8 @@
 ```
 1 .코드가 사용하는 avx256 버전에서 double형이 256bit들어갈 수 있는 최대word 수(256/(doble(8-byte)*1byte(8bit))=4)를 multiplication크기로 설정
 2. 행렬 B[j,k) value를 multiplication크기만큼 벡터 복제 저장한 후<-해당 코드에서 broadcast가 수행
-4. 행렬 &A[k,i]주소+multiplication크기(4)만큼 데이터를 가져와<-해당 코드에서 load가 수행
-6. 둘을 곱한 후 &C[j,i]주소+multiplication크기(4)에 넣는 것 ,_해당 코드에서 fmadd,store가 수행
+3. 행렬 &A[k,i]주소+multiplication크기(4)만큼 데이터를 가져와<-해당 코드에서 load가 수행
+4. 둘을 곱한 후 &C[j,i]주소+multiplication크기(4)에 넣는 것 ,_해당 코드에서 fmadd,store가 수행
 ```
 ```
 for (int i=si;i<si+block;i+=loop*16)
