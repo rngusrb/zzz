@@ -4,7 +4,7 @@
 #### avx
 -작은 사이즈의 연산들을 각각처리 하는 것이 아니라 한번에 커다란 연산들로 처리하는것
 
-1 .코드가 사용하는 avx256 버전에서 double형이 256bit들어갈 수 있는 최대word 수(256/(doble(8-byte)*1byte(8bit))=4)를 multiplication크기로 설정
+  1 .코드가 사용하는 avx256 버전에서 double형이 256bit들어갈 수 있는 최대word 수(256/(doble(8-byte)*1byte(8bit))=4)를 multiplication크기로 설정
 
 2. 행렬 B[j,k) value를 multiplication크기만큼 벡터 복제 저장한 후<-해당 코드에서 broadcast가 수행
 
