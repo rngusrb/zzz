@@ -2,7 +2,7 @@
 ### ACCELERATING MATRIX MULTIPLICATION
 
 #### avx
--작은 사이즈의 연산들을 각각처리 하는 것이 아니라 한번에 커다란 연산들로 처리하는것
+>작은 사이즈의 연산들을 각각처리 하는 것이 아니라 한번에 커다란 연산들로 처리하는것
 ```
 1 .코드가 사용하는 avx256 버전에서 double형이 256bit들어갈 수 있는 최대word 수(256/(doble(8-byte)*1byte(8bit))=4)를 multiplication크기로 설정
 2. 행렬 B[j,k) value를 multiplication크기만큼 벡터 복제 저장한 후<-해당 코드에서 broadcast가 수행
@@ -41,7 +41,7 @@ for (int i=si;i<si+block;i+=loop*16)
             }
 ```
 #### Blocking
--하나의 matrix를 그대로 계산하는 것인 아닌 여러 개의 block으로 나누어 한 번 데이터를 캐쉬에 불러왔을 때 재사용 확률(miss rate낮춤)을 높인다. 
+>하나의 matrix를 그대로 계산하는 것인 아닌 여러 개의 block으로 나누어 한 번 데이터를 캐쉬에 불러왔을 때 재사용 확률(miss rate낮춤)을 높인다. 
 ```
 int block=128;
     for (int sj = 0;sj < size; sj+=block)
@@ -67,7 +67,7 @@ for (int i=si;i<si+block;i+=loop*16)
 
 
 #### Loop unrolling
--Loop를 parallelism하게 expose하여 루프 컨트롤 오버헤드를 줄이는 것.
+>Loop를 parallelism하게 expose하여 루프 컨트롤 오버헤드를 줄이는 것.
 ```
 int loop=2;
 
